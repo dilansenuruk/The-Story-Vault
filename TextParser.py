@@ -25,4 +25,3 @@ def process_all_pdfs(pdf_directory):
             print(f"    ✗ Error: {e}")
     print(f"\nTotal documents loaded: {len(all_documents)}")
     return all_documents
-all_pdf_documents = process_all_pdfs("data")
