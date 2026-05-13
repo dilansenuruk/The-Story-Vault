@@ -8,7 +8,7 @@ import os
 # Args: collection_name <-- Name of the ChromaDB collection
 # Args: persist_directory <-- Directory to persist the vector store
 class VectorStore:
-    def __init__(self, collection_name: str = "pdf_documents", persist_directory: str = "./Data/VectorStore"):
+    def __init__(self, collection_name: str = "pdf_documents", persist_directory: str = "./VectorStore"):
         self.collection_name = collection_name
         self.persist_directory = persist_directory
         self.client = None

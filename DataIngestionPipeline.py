@@ -15,4 +15,3 @@ embeddings = embedding_manager.generate_embeddings(texts)
 vectorstore = VectorStore()
 
 vectorstore.add_documents(chunks, embeddings)
-
