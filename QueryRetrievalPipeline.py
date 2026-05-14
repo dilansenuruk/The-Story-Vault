@@ -3,6 +3,8 @@ from VectorDataStore import VectorStore
 from RagRetriever import RAGRetriever
 from QueryRetriever import rag_advanced
 from langchain_groq import ChatGroq
+from dotenv import load_dotenv
+load_dotenv()
 
 # recreate embedding manager
 embedding_manager = EmbeddingManager()
@@ -19,7 +21,7 @@ rag_retriever = RAGRetriever(vectorstore, embedding_manager)
 llm = ChatGroq(model_name="llama-3.1-8b-instant", temperature=0.1, max_tokens=1024)
 
 # Example Usage:
-result = rag_advanced("How did king Vortex's first son Dilan Senuruk died?", rag_retriever, llm, top_k=3, min_score=0.1, return_context=True)
+result = rag_advanced("Who is Victor Martien?", rag_retriever, llm, top_k=3, min_score=0.1, return_context=True)
 print("Answer:", result['answer'])
 print("Sources:", result['sources'])
 print("Confidence:", result['confidence'])
