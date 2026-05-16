@@ -9,15 +9,15 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-VECTORSTORE_PATH = os.path.join(BASE_DIR, "VectorStore")
+# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# VECTORSTORE_PATH = os.path.join(BASE_DIR, "VectorStore")
 
 # Initialize once (IMPORTANT for performance)
 embedding_manager = EmbeddingManager()
 
 vectorstore = VectorStore(
     collection_name="pdf_documents",
-    persist_directory=VECTORSTORE_PATH
+    persist_directory="./VectorStore"
 )
 
 rag_retriever = RAGRetriever(vectorstore, embedding_manager)
